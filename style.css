@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(205, 234, 243);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.game-board {
+    background-color: azure;
+    width: 1210px;
+    margin: 50px 50px;
+
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1210px;
+    
+    background-color: bisque;
+    
+}
+.cell {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    width: 110px;
+    height: 100px;
+   justify-content: center;
+    
+}
+
+.first-row {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f626651-eb8c-47b2-ade4-4cb5e47b2569/decrjkb-0e2775e1-ba97-4e9f-b8f3-d752ceab4838.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmNjI2NjUxLWViOGMtNDdiMi1hZGU0LTRjYjVlNDdiMjU2OVwvZGVjcmprYi0wZTI3NzVlMS1iYTk3LTRlOWYtYjhmMy1kNzUyY2VhYjQ4MzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yo11QJ9lDzkWyFYQaUyw6E5OH-VsIH_XvVOloR1b0a4);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.second-row {
+    background-image: url(/floor.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  
+}
+.coconut {
+    background: url(/coconut-tree-png.webp) no-repeat center, url(floor.png);
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    background-position: center;
+   
+}
+.third-row {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(56, 100%, 88%);
+   
+}
+.seagull {
+    background-image: url(/seagull.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+ 
+}
+ .forth-row {
+   /* background-image: url(https://thumbs.gfycat.com/HandyHelplessGiraffe-size_restricted.gif); */
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(198, 84%, 88%);
+   
+ }
+ .bridge {
+  background-image: url(/bridge.png);
+  background-repeat: no-repeat;
+ background-size: contain;
+ background-position: center;
+ }
+ .fifth-row {
+
+  background-color: hsl(0, 0%, 90%);
+   
+ }
+ .truck {
+ background-image: url(/campervan.png);
+ background-repeat: no-repeat;
+ background-size: contain;
+ background-position: center;
+ }
+ .sixth-row {
+  background-color: hsl(119, 100%, 90%);
+ }
+ .coconut-t {
+    background: url(/coconut-tree-png.webp);
+    background-color: hsl(119, 100%, 90%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+ }
+ .car {
+    background-image: url(/car.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+ }
+ .seventh-row {
+    background-color: hsl(0, 0%, 90%);
+ }
+
+ .eighth-row {
+    background-color: hsl(119, 100%, 90%);
+ }
+.baller {
+    background-image: url(/baller.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.surfer {
+height: 100%;
+}
