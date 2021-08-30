@@ -2,38 +2,107 @@
     box-sizing: border-box;
 }
 body {
-    background-color: rgb(205, 234, 243);
+    background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+.gameOver {
+  background-color: rgb(245, 223, 223);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.popUpInner {
+  height: 700px;
+  width: 1150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 10px 0 rgb(253, 229, 213);
+  border-radius: 20px;
+}
+
+button {
+  margin: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+.popUp {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  
+}
+.popUp.active {
+  display: flex;
+}
+.startPopUp {
+  background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
 
 }
-.game-board {
-    background-color: azure;
-    width: 1210px;
-    margin: 50px 50px;
+.win {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f626651-eb8c-47b2-ade4-4cb5e47b2569/decrjkb-0e2775e1-ba97-4e9f-b8f3-d752ceab4838.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmNjI2NjUxLWViOGMtNDdiMi1hZGU0LTRjYjVlNDdiMjU2OVwvZGVjcmprYi0wZTI3NzVlMS1iYTk3LTRlOWYtYjhmMy1kNzUyY2VhYjQ4MzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yo11QJ9lDzkWyFYQaUyw6E5OH-VsIH_XvVOloR1b0a4);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  
+}
 
+
+p {
+  width: 250px;
+  height: 400px;
+  text-align: center;
+  padding: 50px;
+  background-color: rgb(255, 228, 198);
+  margin: 10px;
+  box-shadow: 0 0 20px 0 rgb(233, 241, 252);
+  border-radius: 20px;
+ color:hsl(198, 64%, 33%);
+ line-height: 20px;
+}
+
+
+.game-board {
+    width: 1210px;
+    margin: 50px 40px 0;
+   z-index: 10;
+   box-shadow: 0 0 20px 0 rgb(255, 199, 199);
+   border-radius: 10px;
+   overflow: hidden;
+ 
 }
 .grid {
     display: flex;
     flex-wrap: wrap;
     width: 1210px;
-    
     background-color: bisque;
+    
     
 }
 .cell {
-    /* border: 1px solid; */
+    /* border: 1px solid;  */
     display: flex;
     align-items: center;
     width: 110px;
-    height: 100px;
+    height: 90px;
    justify-content: center;
-    
+    flex-direction: column;
 }
+
 
 .first-row {
     background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f626651-eb8c-47b2-ade4-4cb5e47b2569/decrjkb-0e2775e1-ba97-4e9f-b8f3-d752ceab4838.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmNjI2NjUxLWViOGMtNDdiMi1hZGU0LTRjYjVlNDdiMjU2OVwvZGVjcmprYi0wZTI3NzVlMS1iYTk3LTRlOWYtYjhmMy1kNzUyY2VhYjQ4MzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yo11QJ9lDzkWyFYQaUyw6E5OH-VsIH_XvVOloR1b0a4);

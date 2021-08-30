@@ -1,16 +1,18 @@
 function init() {
-
+  // Elements 
   const grid = document.querySelector('.grid')
   const surfer = document.querySelector('.surfer')
   const cells = document.querySelectorAll('.cell')
   const noEntry = document.querySelectorAll('.no-Entry')
+  const audio = document.querySelector('audio')
 
   let counter = 0
   const width = 11
   // car
   const carRowIndex = 6
   const carGap = 3
-  const cars = Array.from(cells).slice(width * carRowIndex, width * (carRowIndex + 1))
+  const carStartIndex = width * carRowIndex
+  const cars = Array.from(cells).slice(carStartIndex, carStartIndex + width)
   console.log(cars)
   // seagull 
   const seagullIndex = 2
@@ -21,18 +23,37 @@ function init() {
   const truckGap = 3
   const trucks = Array.from(cells).slice(width * truckRowIndex, width * (truckRowIndex + 1))
 
-
+  const startButtons = document.querySelectorAll('.start')
+  const popUps = document.querySelectorAll('.popUp')
+  const popStart = document.querySelector('.startOverlay')
+  const popGameOver = document.querySelector('.gameOverOverlay')
+  const popWin = document.querySelector('.winOverlay')
   const startingPosition = 86
   let characterPosition = startingPosition
 
+  //Functions
+
+  function startReset() {
+    popUps.forEach(popUp => popUp.classList.remove('active'))
+    characterPosition = startingPosition
+    moveCharacter()
+    audio.play()
+  }
+
 
   function moveCharacter() {
-    // cells.forEach(cell => cell.classList.remove('surfer'))
-    // cells[characterPosition].classList.add('surfer')
     cells.forEach(cell => cell.innerHTML = '')
     cells[characterPosition].innerHTML = '<img src="/surfer.png" class="surfer" >'
-
   }
+
+  function gameOver() {
+    popGameOver.classList.add('active')
+  }
+  function win() {
+        popWin.classList.add('active')
+  }
+  
+   
 
   function run() {
     counter++
@@ -41,26 +62,34 @@ function init() {
     cars.forEach((car, index) => {
       if (index % carGap === carGap - 1 - counter % carGap) {
         car.classList.add('car')
+        if (index + width * carRowIndex === characterPosition) {
+          gameOver()
+        }
       }
     })
     seagulls.forEach((seagull, index) => {
       if (index % seagullGap === seagullGap - 1 - counter % seagullGap) {
         seagull.classList.add('seagull')
+        if (index + width * seagullIndex === characterPosition) {
+          gameOver()
+        }
+
       }
     })
     trucks.forEach((truck, index) => {
       if (index % truckGap === counter % truckGap) {
         truck.classList.add('truck')
+        if (index + width * truckRowIndex === characterPosition) {
+          gameOver()
+        }
       }
     })
 
-
-
   }
   setInterval(run, 500)
+  
 
-
-  document.addEventListener('keyup', event => {
+  function keyUp(event) {
     console.log(characterPosition % width)
     let newPosition = characterPosition
 
@@ -80,16 +109,23 @@ function init() {
       console.log('no-Enty')
 
     }
+    if (characterPosition <= width) {
+      win()
+    }
     console.log(characterPosition)
     moveCharacter()
   }
-  )
+
+
+  // Puts the first character in a strat position.
+  moveCharacter()
 
 
 
+  //Event Listeners 
 
-// Puts the first character in a strat position.
-  moveCharacter() 
+  document.addEventListener('keyup', keyUp)
+  startButtons.forEach(button => button.addEventListener('click', startReset))
 }
 
 window.addEventListener('DOMContentLoaded', init)
