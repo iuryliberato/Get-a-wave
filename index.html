@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -14,7 +17,7 @@
 
 
     <header>
-        <h1>Beach Club Game</h1>
+        <h1>Get'a Wave</h1>
     </header>
     <div class="game-board">
         <div class="grid-cover">
@@ -59,16 +62,16 @@
                 <div class="third-row cell"></div>
                 <div class="third-row cell seagull"></div>
                 <!-- forth row -->
-                <div class="forth-row cell no-Entry"></div>
+                <div class="forth-row cell water "></div>
                 <div class="forth-row cell bridge"></div>
-                <div class="forth-row cell no-Entry"></div>
-                <div class="forth-row cell no-Entry"></div>
+                <div class="forth-row cell water "></div>
+                <div class="forth-row cell water "></div>
                 <div class="forth-row cell bridge"></div>
-                <div class="forth-row cell no-Entry"></div>
-                <div class="forth-row cell no-Entry"></div>
+                <div class="forth-row cell water "></div>
+                <div class="forth-row cell water "></div>
                 <div class="forth-row cell bridge"></div>
-                <div class="forth-row cell no-Entry"></div>
-                <div class="forth-row cell no-Entry"></div>
+                <div class="forth-row cell water "></div>
+                <div class="forth-row cell water "></div>
                 <div class="forth-row cell bridge"></div>
                 <!-- Fifth row -->
                 <div class="fifth-row cell truck"></div>
@@ -83,17 +86,17 @@
                 <div class="fifth-row cell truck"></div>
                 <div class="fifth-row cell "></div>
                 <!-- sixth row -->
+                <div class="sixth-row cell no-Entry coconut-t"></div>
+                <div class="sixth-row cell"></div>
+                <div class="sixth-row cell"></div>
                 <div class="sixth-row cell"></div>
                 <div class="sixth-row cell"></div>
                 <div class="sixth-row cell no-Entry coconut-t"></div>
                 <div class="sixth-row cell"></div>
                 <div class="sixth-row cell"></div>
+                <div class="sixth-row cell "></div>
+                <div class="sixth-row cell"></div>
                 <div class="sixth-row cell no-Entry coconut-t"></div>
-                <div class="sixth-row cell"></div>
-                <div class="sixth-row cell"></div>
-                <div class="sixth-row cell no-Entry coconut-t"></div>
-                <div class="sixth-row cell"></div>
-                <div class="sixth-row cell"></div>
                 <!-- seventh row -->
                 <div class="seventh-row cell car"></div>
                 <div class="seventh-row cell "></div>
@@ -108,42 +111,58 @@
                 <div class="seventh-row cell "></div>
                 <!-- eighth row -->
                 <div class="eighth-row cell"></div>
-                <div class="eighth-row cell"></div>
-                <div class="eighth-row cell"></div>
                 <div class="eighth-row cell baller"></div>
                 <div class="eighth-row cell"></div>
+                <div class="eighth-row cell  no-Entry coconut-t"></div>
                 <div class="eighth-row cell"></div>
                 <div class="eighth-row cell"></div>
                 <div class="eighth-row cell"></div>
+                <div class="eighth-row cell no-Entry coconut-t"></div>
                 <div class="eighth-row cell"></div>
                 <div class="eighth-row cell"></div>
                 <div class="eighth-row cell"></div>
 
             </div>
         </div>
-        <div class="popUp active startOverlay">
+        <div class="popUp active startOverlay"> 
             <div class="startPopUp popUpInner">
-                <button class="start">START</button>
+                
                 <div class="description">
+                    <h2>HOW TO PLAY:</h2>
                 <p>The Surfer starts at the bottom of the screen going upward, to cross a horizontal road with speeding
                     cars, trucks and seagulls. The player must guide the Surfer using 4-direction joystick to go up, down, left and right.
                 </p>
+                <div class="starterButton">
+                    <button class="start">START</button>
+                    </div>
                 </div>
+                <img class="surferST" src="surfer.png">
             </div>
         </div>
         <div class="popUp gameOverOverlay">
             <div class="gameOver popUpInner">
-                <button class="start">GAME OVER RESTART</button>
+                <img class="gameOverGif" src="https://c.tenor.com/V7GwZH0kIToAAAAC/game-over.gif">
+                <button class="start restart">RESTART</button>
             </div>
         </div>
         <div class="popUp winOverlay">
             <div class="win popUpInner">
-                <button class="start">Win restart</button>
+                <div class="white">
+                    <h2 class="youWin">You win!!!</h2>
+                <button class="start play-again">PLAY AGAIN</button>
             </div>
         </div>
-        <audio loop>
+        </div>
+        <audio id="backgroundSong" loop>
             <source src="bossanova.flac">
         </audio>
+        <audio id="moving_effect">
+            <source src="moving _effect.wav">
+        </audio>
+        <audio id="carHorn">
+            <source src="car_horn.wav">
+        </audio>
+
     </div>
 
 

@@ -11,12 +11,20 @@ body {
     height: 100vh;
     flex-direction: column;
     overflow: hidden;
+    transition: opacity .5s;
 }
-.gameOver {
-  background-color: rgb(245, 223, 223);
-  background-repeat: no-repeat;
-  background-size: contain;
+h1 {
+  width: 200px;
+  height: 50px;
+background-color: hsl(95, 89%, 93%);
+border: none;
+box-shadow: 0 0 20px 0 rgb(253, 229, 213);
+border-radius: 20px;
+font-family: 'Orbitron', sans-serif;
+font-size: 25px;
+color:hsl(198, 64%, 33%);
 }
+
 .popUpInner {
   height: 700px;
   width: 1150px;
@@ -25,12 +33,20 @@ body {
   justify-content: space-around;
   box-shadow: 0 0 10px 0 rgb(253, 229, 213);
   border-radius: 20px;
+  
 }
 
 button {
-  margin: 100px;
-  display: flex;
-  justify-content: flex-end;
+  width: 125px;
+  height: 65px;
+background-color: hsl(95, 89%, 93%);
+border: none;
+margin-top: 35px;
+box-shadow: 0 0 20px 0 rgb(197, 234, 248);
+border-radius: 20px;
+font-family: 'Orbitron', sans-serif;
+font-size: 25px;
+color:hsl(198, 64%, 33%);
 }
 .popUp {
   position: fixed;
@@ -41,7 +57,9 @@ button {
   display: none;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+ 
   
 }
 .popUp.active {
@@ -51,30 +69,98 @@ button {
   background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
 
 }
+.white {
+  height: 700px;
+  width: 1150px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+}
 .win {
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f626651-eb8c-47b2-ade4-4cb5e47b2569/decrjkb-0e2775e1-ba97-4e9f-b8f3-d752ceab4838.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmNjI2NjUxLWViOGMtNDdiMi1hZGU0LTRjYjVlNDdiMjU2OVwvZGVjcmprYi0wZTI3NzVlMS1iYTk3LTRlOWYtYjhmMy1kNzUyY2VhYjQ4MzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yo11QJ9lDzkWyFYQaUyw6E5OH-VsIH_XvVOloR1b0a4);
+  background-image: url(https://cdn.dribbble.com/users/1610613/screenshots/3625500/dribble.gif);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.youWin {
+  width: 350px;
+  height: 70px;
+  text-align: center;
+background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
+background-repeat: no-repeat;
+  background-size: cover;
+border: none;
+box-shadow: 0 0 20px 0 rgb(200, 245, 206);
+border-radius: 20px;
+font-family: 'Orbitron', sans-serif;
+font-size: 50px;
+color:hsl(192, 49%, 67%);
+display: flex;
+justify-content: center;
+}
+.play-again{
+margin-top: 350px;
+width: 200px;
+
 }
 h1 {
   text-align: center;
   
 }
+.surferST {
+  height: 330px;
+  margin: 150px 50px 0 0;
+  
+}
+.starterButton {
+ display: flex;
+ align-items: center;
+  justify-content: center;
+  
+}
 
 
-p {
-  width: 250px;
-  height: 400px;
+.description {
+  width: 540px;
+  height: 500px;
   text-align: center;
-  padding: 50px;
+  padding: 80px;
   background-color: rgb(255, 228, 198);
-  margin: 10px;
   box-shadow: 0 0 20px 0 rgb(233, 241, 252);
   border-radius: 20px;
  color:hsl(198, 64%, 33%);
- line-height: 20px;
+ line-height: 1.4;
+ font-family: 'Orbitron', sans-serif;
 }
-
+.gameOver {
+  background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.gameOverGif {
+  box-shadow: 0 0 20px 0 rgb(252, 220, 210);
+  border-radius: 20px;
+  height: 250px;
+  margin-top: 50px;
+ 
+}
+.start.restart {
+  width: 190px;
+  height: 65px;
+background-color: hsl(95, 89%, 93%);
+border: none;
+box-shadow: 0 0 20px 0 rgb(253, 224, 204);
+border-radius: 20px;
+font-family: 'Orbitron', sans-serif;
+font-size: 25px;
+color:hsl(198, 64%, 33%);
+margin-bottom: 160px;
+}
 
 .game-board {
     width: 1210px;
@@ -105,7 +191,7 @@ p {
 
 
 .first-row {
-    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f626651-eb8c-47b2-ade4-4cb5e47b2569/decrjkb-0e2775e1-ba97-4e9f-b8f3-d752ceab4838.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmNjI2NjUxLWViOGMtNDdiMi1hZGU0LTRjYjVlNDdiMjU2OVwvZGVjcmprYi0wZTI3NzVlMS1iYTk3LTRlOWYtYjhmMy1kNzUyY2VhYjQ4MzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yo11QJ9lDzkWyFYQaUyw6E5OH-VsIH_XvVOloR1b0a4);
+    background-image: url(https://media.istockphoto.com/vectors/summer-beach-vacation-concept-background-vector-id480349172?k=20&m=480349172&s=612x612&w=0&h=WjZuLL07Ct4hScXJShmVfQTBWwJUmsipFd4Qvn8QTpw=);
     background-repeat: no-repeat;
     background-size: cover;
 }
