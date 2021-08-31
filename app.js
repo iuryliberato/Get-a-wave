@@ -1,17 +1,17 @@
 function init() {
   // Elements 
-  const grid = document.querySelector('.grid')
-  const surfer = document.querySelector('.surfer')
+
   const cells = document.querySelectorAll('.cell')
-  const noEntry = document.querySelectorAll('.no-Entry')
+  
   const audio = document.querySelector('#backgroundSong')
   const moving = document.querySelector('#moving_effect')
   const carHorn = document.querySelector('#carHorn')
-  const water = document.querySelectorAll('.water')
+  
   const seagullSound = document.querySelector('#seagullSound')
   const winSound = document.querySelector('#win')
   const gameOverTheme = document.querySelector('#gameOverTheme')
 
+  let gameInterval
   let counter = 0
   const width = 11
   // car
@@ -19,7 +19,7 @@ function init() {
   const carGap = 3
   const carStartIndex = width * carRowIndex
   const cars = Array.from(cells).slice(carStartIndex, carStartIndex + width)
-  console.log(cars)
+ 
   // seagull 
   const seagullIndex = 2
   const seagullGap = 3
@@ -31,7 +31,7 @@ function init() {
 
   const startButtons = document.querySelectorAll('.start')
   const popUps = document.querySelectorAll('.popUp')
-  const popStart = document.querySelector('.startOverlay')
+
   const popGameOver = document.querySelector('.gameOverOverlay')
   const popWin = document.querySelector('.winOverlay')
   const startingPosition = 86
@@ -42,16 +42,21 @@ function init() {
     carHorn.play()
   }
   function movesound() {
-    moving.play() 
+    moving.play()
   }
   function seagullSounds() {
     seagullSound.play()
+    setTimeout(() => {
+      seagullSound.pause()
+    }, 4000
+    )
   }
   function winTheme() {
     winSound.play()
   }
   function gameOverThemee() {
-  gameOverTheme.play()
+    gameOverTheme.currentTime = 0
+    gameOverTheme.play()
   }
 
   function startReset() {
@@ -59,6 +64,9 @@ function init() {
     characterPosition = startingPosition
     moveCharacter()
     audio.play()
+    winSound.pause()
+    gameOverTheme.pause()
+    gameInterval = setInterval(run, 600)
   }
 
 
@@ -70,11 +78,16 @@ function init() {
 
   function gameOver() {
     popGameOver.classList.add('active')
+    stopGame()
   }
   function win() {
     popWin.classList.add('active')
+    stopGame()
   }
-
+  function stopGame() {
+    clearInterval(gameInterval)
+   audio.pause()
+  }
 
 
   function run() {
@@ -84,18 +97,18 @@ function init() {
     cars.forEach((car, index) => {
       if (index % carGap === carGap - 1 - counter % carGap) {
         car.classList.add('car')
-        
-        if (index + width * carRowIndex === characterPosition ) {
+
+        if (index + width * carRowIndex === characterPosition) {
           carHornPlay()
           gameOver()
-          
+
         }
       }
     })
     seagulls.forEach((seagull, index) => {
       if (index % seagullGap === seagullGap - 1 - counter % seagullGap) {
         seagull.classList.add('seagull')
-        
+
         if (index + width * seagullIndex === characterPosition) {
           gameOver()
           seagullSounds()
@@ -106,8 +119,8 @@ function init() {
     trucks.forEach((truck, index) => {
       if (index % truckGap === counter % truckGap) {
         truck.classList.add('truck')
-       
-        
+
+
         if (index + width * truckRowIndex === characterPosition) {
           carHornPlay()
           gameOver()
@@ -116,19 +129,16 @@ function init() {
     })
 
   }
-  setInterval(run, 600)
-
 
   function keyUp(event) {
-    console.log(characterPosition % width)
     let newPosition = characterPosition
 
     if (event.code === 'ArrowUp' && characterPosition >= width) {
-      newPosition -= width 
-     
+      newPosition -= width
+
     } else if (event.code === 'ArrowDown' && characterPosition < cells.length - width) {
       newPosition += width
-       
+
     } else if (event.code === 'ArrowLeft' && characterPosition % width !== 0) {
       newPosition--
     } else if (event.code === 'ArrowRight' && (characterPosition + 1) % width !== 0) {
@@ -141,37 +151,36 @@ function init() {
 
     }
     if (cells[newPosition].classList.contains('water')) {
-     gameOver()
-     gameOverThemee()
+      gameOver()
+      gameOverThemee()
     }
     if (cells[newPosition].classList.contains('car')) {
       gameOver()
       carHornPlay()
-     }
-     if (cells[newPosition].classList.contains('seagull')) {
+    }
+    if (cells[newPosition].classList.contains('seagull')) {
       gameOver()
       seagullSounds()
-     }
-     if (cells[newPosition].classList.contains('truck')) {
+    }
+    if (cells[newPosition].classList.contains('truck')) {
       gameOver()
       carHornPlay()
-     }
+    }
     if (characterPosition <= width) {
       win()
       winTheme()
     }
-    console.log(characterPosition)
     moveCharacter()
   }
 
 
   // Puts the first character in a strat position.
   moveCharacter()
-  
+
 
 
   //Event Listeners 
-  
+
   document.addEventListener('keyup', keyUp)
   startButtons.forEach(button => button.addEventListener('click', startReset))
 }
