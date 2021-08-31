@@ -8,6 +8,9 @@ function init() {
   const moving = document.querySelector('#moving_effect')
   const carHorn = document.querySelector('#carHorn')
   const water = document.querySelectorAll('.water')
+  const seagullSound = document.querySelector('#seagullSound')
+  const winSound = document.querySelector('#win')
+  const gameOverTheme = document.querySelector('#gameOverTheme')
 
   let counter = 0
   const width = 11
@@ -41,7 +44,16 @@ function init() {
   function movesound() {
     moving.play() 
   }
-  
+  function seagullSounds() {
+    seagullSound.play()
+  }
+  function winTheme() {
+    winSound.play()
+  }
+  function gameOverThemee() {
+  gameOverTheme.play()
+  }
+
   function startReset() {
     popUps.forEach(popUp => popUp.classList.remove('active'))
     characterPosition = startingPosition
@@ -86,6 +98,7 @@ function init() {
         
         if (index + width * seagullIndex === characterPosition) {
           gameOver()
+          seagullSounds()
         }
 
       }
@@ -96,6 +109,7 @@ function init() {
        
         
         if (index + width * truckRowIndex === characterPosition) {
+          carHornPlay()
           gameOver()
         }
       }
@@ -121,8 +135,6 @@ function init() {
       newPosition++
     }
 
-  
-
     if (!cells[newPosition].classList.contains('no-Entry')) {
       characterPosition = newPosition
       movesound()
@@ -130,9 +142,23 @@ function init() {
     }
     if (cells[newPosition].classList.contains('water')) {
      gameOver()
+     gameOverThemee()
     }
+    if (cells[newPosition].classList.contains('car')) {
+      gameOver()
+      carHornPlay()
+     }
+     if (cells[newPosition].classList.contains('seagull')) {
+      gameOver()
+      seagullSounds()
+     }
+     if (cells[newPosition].classList.contains('truck')) {
+      gameOver()
+      carHornPlay()
+     }
     if (characterPosition <= width) {
       win()
+      winTheme()
     }
     console.log(characterPosition)
     moveCharacter()
@@ -141,7 +167,7 @@ function init() {
 
   // Puts the first character in a strat position.
   moveCharacter()
-
+  
 
 
   //Event Listeners 
