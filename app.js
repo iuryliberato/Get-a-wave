@@ -95,9 +95,10 @@ function init() {
 
   function moveCharacter() {
     cells.forEach(cell => cell.innerHTML = '')
-    cells[characterPositions[1]].innerHTML = '<img src="/surfer.png" class="surfer" >'
-    cells[characterPositions[2]].innerHTML = '<img src="/surfer2.png" class="surfer" >'
-    cells[characterPositions[3]].innerHTML = '<img src="/surfer3.png" class="surfer" >'
+    cells[characterPositions[1]].innerHTML = activeCharacter === 1 ?'<img src="/surfer.png" class="surfer active" >' : '<img src="/surfer.png" class="surfer" >'
+    cells[characterPositions[2]].innerHTML = activeCharacter === 2 ?'<img src="/surfer2.png" class="surfer active" >': '<img src="/surfer2.png" class="surfer">'
+    cells[characterPositions[3]].innerHTML = activeCharacter === 3 ?'<img src="/surfer3.png" class="surfer active" >': '<img src="/surfer3.png" class="surfer" >'
+
   }
 
   function gameOver() {
@@ -194,10 +195,10 @@ function init() {
     if (characterPositions[activeCharacter] <= width) {
       if (activeCharacter === 1) {
         activeCharacter = 2
-        setSpeed(350)
+        setSpeed(400)
       } else if (activeCharacter === 2) {
         activeCharacter = 3
-        setSpeed(250)
+        setSpeed(350)
       } else {
         win()
       }

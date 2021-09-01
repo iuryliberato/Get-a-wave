@@ -131,14 +131,14 @@ h1 {
 
 .description {
   width: 540px;
-  height: 600px;
+  height: 610px;
   text-align: center;
-  padding: 80px;
+  padding: 60px;
   background-color: rgb(255, 228, 198);
   box-shadow: 0 0 20px 0 rgb(233, 241, 252);
   border-radius: 20px;
  color:hsl(198, 64%, 33%);
- line-height: 1.4;
+ line-height: 1.6;
  font-family: 'Orbitron', sans-serif;
 }
 .gameOver {
@@ -285,6 +285,21 @@ margin-bottom: 160px;
 }
 .surfer {
 height: 100%;
+}
+
+@keyframes activeCaracter {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(0.9)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+.surfer.active {
+ animation: activeCaracter 1s infinite;
 }
 
 @keyframes fontbulger {
