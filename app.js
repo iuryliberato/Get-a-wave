@@ -85,7 +85,7 @@ function init() {
     audio.play()
     winSound.pause()
     gameOverTheme.pause()
-    setSpeed(450)
+    setSpeed(400)
     activeCharacter = 1
   }
   function setSpeed(ms) {
@@ -195,10 +195,10 @@ function init() {
     if (characterPositions[activeCharacter] <= width) {
       if (activeCharacter === 1) {
         activeCharacter = 2
-        setSpeed(400)
+        setSpeed(350)
       } else if (activeCharacter === 2) {
         activeCharacter = 3
-        setSpeed(350)
+        setSpeed(300)
       } else {
         win()
       }
