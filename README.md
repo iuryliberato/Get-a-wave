@@ -35,16 +35,17 @@
 ### When the character moves:
 - The keyUp event is used to move the character up, down, left and right.
 - It checks which direction the characters are going and don't let them go out of the grid.
-- With `class="no-entry"` it checks the character is allowed to move into the new position, and if not, then the character does not move.
-- Checks if the new position is an obstacle like water, car, truck or seagull.
--
-
-
+- With `class="no-entry"` checks if the character is allowed to move into the new position, if not then the character does not move.
+- Checks if the new position is an obstacle like water, car, truck or seagull, and if is, then makes it Game Over.
+- Once the character arrives in the first row, the character is safe and the next character gets activated. 
+- The traffic speeds up after each round by changing the interval time in the set interval function.
+- Once all of the characters arrive on the beach(first row) is a win.
+- When the user lose, a Game Over screen is displayed or if is a win, a win screen is played.
 
 ## Installation instructions:
-
+- Click in the following link from your computer.
 
 
 ## Wins:
-- flex-box feels easy now 
+- Flex-box feels easy now.
 - I understand CSS animation a bit more.

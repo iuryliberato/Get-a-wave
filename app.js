@@ -1,12 +1,9 @@
 function init() {
   // Elements 
-
   const cells = document.querySelectorAll('.cell')
-
   const audio = document.querySelector('#backgroundSong')
   const moving = document.querySelector('#moving_effect')
   const carHorn = document.querySelector('#carHorn')
-
   const seagullSound = document.querySelector('#seagullSound')
   const winSound = document.querySelector('#win')
   const gameOverTheme = document.querySelector('#gameOverTheme')
@@ -34,7 +31,7 @@ function init() {
 
   const popGameOver = document.querySelector('.gameOverOverlay')
   const popWin = document.querySelector('.winOverlay')
- 
+
   const startingPosition1 = 86
   const startingPosition2 = 82
   const startingPosition3 = 78
@@ -76,29 +73,34 @@ function init() {
   }
 
   function startReset() {
+    //hide overlays
     popUps.forEach(popUp => popUp.classList.remove('active'))
-  
+    // place the characters in their positions
     characterPositions[1] = startingPosition1
     characterPositions[2] = startingPosition2
     characterPositions[3] = startingPosition3
-    moveCharacter()
+    printCharacters()
+    //start background sound
     audio.play()
     winSound.pause()
     gameOverTheme.pause()
+    // start the obstacles moving
     setSpeed(400)
     activeCharacter = 1
   }
+
   function setSpeed(ms) {
     clearInterval(gameInterval)
     gameInterval = setInterval(run, ms)
   }
 
-  function moveCharacter() {
+  function printCharacters() {
+  //empty all of the cells.
     cells.forEach(cell => cell.innerHTML = '')
-    cells[characterPositions[1]].innerHTML = activeCharacter === 1 ?'<img src="/surfer.png" class="surfer active" >' : '<img src="/surfer.png" class="surfer" >'
-    cells[characterPositions[2]].innerHTML = activeCharacter === 2 ?'<img src="/surfer2.png" class="surfer active" >': '<img src="/surfer2.png" class="surfer">'
-    cells[characterPositions[3]].innerHTML = activeCharacter === 3 ?'<img src="/surfer3.png" class="surfer active" >': '<img src="/surfer3.png" class="surfer" >'
-
+    
+    cells[characterPositions[1]].innerHTML = activeCharacter === 1 ? '<img src="/surfer.png" class="surfer active" >' : '<img src="/surfer.png" class="surfer" >'
+    cells[characterPositions[2]].innerHTML = activeCharacter === 2 ? '<img src="/surfer2.png" class="surfer active" >' : '<img src="/surfer2.png" class="surfer">'
+    cells[characterPositions[3]].innerHTML = activeCharacter === 3 ? '<img src="/surfer3.png" class="surfer active" >' : '<img src="/surfer3.png" class="surfer" >'
   }
 
   function gameOver() {
@@ -118,8 +120,10 @@ function init() {
 
   function run() {
     counter++
-    // console.log(counter) 
+    //removes the three obstacles
     cells.forEach(cell => cell.classList.remove('car', 'seagull', 'truck'))
+
+    //print and run obstacles in a opposite way
     cars.forEach((car, index) => {
       if (index % carGap === carGap - 1 - counter % carGap) {
         car.classList.add('car')
@@ -127,10 +131,10 @@ function init() {
         if (index + width * carRowIndex === characterPositions[activeCharacter]) {
           carHornPlay()
           gameOver()
-
         }
       }
     })
+
     seagulls.forEach((seagull, index) => {
       if (index % seagullGap === seagullGap - 1 - counter % seagullGap) {
         seagull.classList.add('seagull')
@@ -139,13 +143,12 @@ function init() {
           gameOver()
           seagullSounds()
         }
-
       }
     })
+    //print and run obstacles 
     trucks.forEach((truck, index) => {
       if (index % truckGap === counter % truckGap) {
         truck.classList.add('truck')
-
 
         if (index + width * truckRowIndex === characterPositions[activeCharacter]) {
           carHornPlay()
@@ -158,7 +161,7 @@ function init() {
 
   function keyUp(event) {
     let newPosition = characterPositions[activeCharacter]
-
+    //let characters move around inside the grid.
     if (event.code === 'ArrowUp' && characterPositions[activeCharacter] >= width) {
       newPosition -= width
 
@@ -170,7 +173,7 @@ function init() {
     } else if (event.code === 'ArrowRight' && (characterPositions[activeCharacter] + 1) % width !== 0) {
       newPosition++
     }
-
+    
     if (!cells[newPosition].classList.contains('no-Entry')) {
       characterPositions[activeCharacter] = newPosition
       movesound()
@@ -192,31 +195,33 @@ function init() {
       gameOver()
       carHornPlay()
     }
+    //set different speeds for each round.
     if (characterPositions[activeCharacter] <= width) {
       if (activeCharacter === 1) {
         activeCharacter = 2
-        setSpeed(350)
+        setSpeed(330)
       } else if (activeCharacter === 2) {
         activeCharacter = 3
-        setSpeed(300)
+        setSpeed(290)
       } else {
         win()
       }
 
 
     }
-    moveCharacter()
+    printCharacters()
   }
 
 
   // Puts the first character in a strat position.
-  moveCharacter()
+  printCharacters()
 
 
 
   //Event Listeners 
 
   document.addEventListener('keyup', keyUp)
+
   startButtons.forEach(button => button.addEventListener('click', startReset))
 }
 

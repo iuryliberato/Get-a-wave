@@ -7,11 +7,23 @@ body {
     background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 100vh;
     flex-direction: column;
     overflow: hidden;
     transition: opacity .5s;
+}
+.logoFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 100px;
+ 
+}
+.logo {
+  height: 180px;
+}
+.logoStart {
+  height: 180px;
 }
 h1 {
   width: 200px;
@@ -80,8 +92,8 @@ outline: 0 none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
- 
 }
+
 .win {
   background-image: url(https://cdn.dribbble.com/users/1610613/screenshots/3625500/dribble.gif);
   background-repeat: no-repeat;
@@ -113,13 +125,14 @@ h1 {
   
 }
 .surferST {
-  height: 350px;
-  margin: 150px 50px 0 0;
+  height: 370px;
+  width: 200px;
+  margin-top: 10px;
   
 }
 .starterButton {
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .arrows {
@@ -137,9 +150,9 @@ h1 {
   background-color: rgb(255, 228, 198);
   box-shadow: 0 0 20px 0 rgb(233, 241, 252);
   border-radius: 20px;
- color:hsl(198, 64%, 33%);
- line-height: 1.6;
- font-family: 'Orbitron', sans-serif;
+  color:hsl(198, 64%, 33%);
+  line-height: 1.6;
+  font-family: 'Orbitron', sans-serif;
 }
 .gameOver {
   background-image: url(https://assets.bonappetit.com/photos/5b2d3fe491add56139223a0e/5:4/w_1569,h_1255,c_limit/hea-meditation-myth.gif);
@@ -154,29 +167,28 @@ h1 {
   border-radius: 20px;
   height: 250px;
   margin-top: 50px;
- 
 }
 .start.restart {
   width: 190px;
   height: 65px;
-background-color: hsl(95, 89%, 93%);
-border: none;
-box-shadow: 0 0 20px 0 rgb(253, 224, 204);
-border-radius: 20px;
-font-family: 'Orbitron', sans-serif;
-font-size: 25px;
-color:hsl(198, 64%, 33%);
-margin-bottom: 160px;
+  background-color: hsl(95, 89%, 93%);
+  border: none;
+  box-shadow: 0 0 20px 0 rgb(253, 224, 204);
+  border-radius: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  color:hsl(198, 64%, 33%);
+  margin-bottom: 160px;
 }
 
 .game-board {
-    width: 1210px;
-    margin: 50px 40px 0;
-   z-index: 10;
-   box-shadow: 0 0 20px 0 rgb(255, 199, 199);
-   border-radius: 10px;
-   overflow: hidden;
- 
+  width: 1210px;
+  margin: 10px 40px 0;
+  z-index: 10;
+  box-shadow: 0 0 20px 0 rgb(255, 199, 199);
+  border-radius: 10px;
+  overflow: hidden;
+
 }
 .grid {
     display: flex;
@@ -192,7 +204,7 @@ margin-bottom: 160px;
     align-items: center;
     width: 110px;
     height: 90px;
-   justify-content: center;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -206,7 +218,6 @@ margin-bottom: 160px;
     background-image: url(/floor.png);
     background-repeat: no-repeat;
     background-size: cover;
-   
   
 }
 .coconut {
@@ -214,69 +225,65 @@ margin-bottom: 160px;
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: center;
-   
 }
 .third-row {
     
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsl(56, 100%, 88%);
-   
 }
 .seagull {
     background-image: url(/seagull.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
- 
+
 }
- .forth-row {
+.forth-row {
    /* background-image: url(https://thumbs.gfycat.com/HandyHelplessGiraffe-size_restricted.gif); */
-   background-repeat: no-repeat;
+background-repeat: no-repeat;
     background-size: cover;
     background-color: hsl(198, 84%, 88%);
-   
- }
- .bridge {
+
+}
+.bridge {
   background-image: url(/bridge.png);
   background-repeat: no-repeat;
- background-size: contain;
- background-position: center;
- }
- .fifth-row {
-
+  background-size: contain;
+  background-position: center;
+}
+.fifth-row {
   background-color: hsl(0, 0%, 90%);
-   
- }
- .truck {
- background-image: url(/campervan.png);
- background-repeat: no-repeat;
- background-size: contain;
- background-position: center;
- }
- .sixth-row {
+}
+.truck {
+  background-image: url(/campervan.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.sixth-row {
   background-color: hsl(119, 100%, 90%);
- }
- .coconut-t {
+}
+.coconut-t {
     background: url(/coconut-tree-png.webp);
     background-color: hsl(119, 100%, 90%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
- }
- .car {
+}
+.car {
     background-image: url(/car.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
- }
- .seventh-row {
+}
+.seventh-row {
     background-color: hsl(0, 0%, 90%);
- }
+}
 
- .eighth-row {
+.eighth-row {
     background-color: hsl(119, 100%, 90%);
- }
+}
 .baller {
     background-image: url(/baller.png);
     background-repeat: no-repeat;
@@ -315,7 +322,7 @@ height: 100%;
 }
 
 .youWin {
-   animation: fontbulger 2s infinite;
+  animation: fontbulger 2s infinite;
 }
 
 
@@ -333,5 +340,5 @@ height: 100%;
 }
 
 Button {
-   animation: fontbulger 2s infinite;
+  animation: fontbulger 2s infinite;
 }
