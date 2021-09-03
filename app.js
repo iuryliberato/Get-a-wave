@@ -98,9 +98,9 @@ function init() {
   //empty all of the cells.
     cells.forEach(cell => cell.innerHTML = '')
     
-    cells[characterPositions[1]].innerHTML = activeCharacter === 1 ? '<img src="/surfer.png" class="surfer active" >' : '<img src="/surfer.png" class="surfer" >'
-    cells[characterPositions[2]].innerHTML = activeCharacter === 2 ? '<img src="/surfer2.png" class="surfer active" >' : '<img src="/surfer2.png" class="surfer">'
-    cells[characterPositions[3]].innerHTML = activeCharacter === 3 ? '<img src="/surfer3.png" class="surfer active" >' : '<img src="/surfer3.png" class="surfer" >'
+    cells[characterPositions[1]].innerHTML = activeCharacter === 1 ? '<img src="surfer.png" class="surfer active" >' : '<img src="surfer.png" class="surfer" >'
+    cells[characterPositions[2]].innerHTML = activeCharacter === 2 ? '<img src="surfer2.png" class="surfer active" >' : '<img src="surfer2.png" class="surfer">'
+    cells[characterPositions[3]].innerHTML = activeCharacter === 3 ? '<img src="surfer3.png" class="surfer active" >' : '<img src="surfer3.png" class="surfer" >'
   }
 
   function gameOver() {
