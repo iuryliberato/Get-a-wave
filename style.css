@@ -215,13 +215,13 @@ h1 {
     background-size: cover;
 }
 .second-row {
-    background-image: url(/floor.png);
+    background-image: url(floor.png);
     background-repeat: no-repeat;
     background-size: cover;
   
 }
 .coconut {
-    background: url(/coconut-tree-png.webp) no-repeat center, url(floor.png);
+    background: url(coconut-tree-png.webp) no-repeat center, url(floor.png);
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: center;
@@ -233,7 +233,7 @@ h1 {
     background-color: hsl(56, 100%, 88%);
 }
 .seagull {
-    background-image: url(/seagull.png);
+    background-image: url(seagull.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -247,7 +247,7 @@ background-repeat: no-repeat;
 
 }
 .bridge {
-  background-image: url(/bridge.png);
+  background-image: url(bridge.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -256,7 +256,7 @@ background-repeat: no-repeat;
   background-color: hsl(0, 0%, 90%);
 }
 .truck {
-  background-image: url(/campervan.png);
+  background-image: url(campervan.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -265,14 +265,14 @@ background-repeat: no-repeat;
   background-color: hsl(119, 100%, 90%);
 }
 .coconut-t {
-    background: url(/coconut-tree-png.webp);
+    background: url(coconut-tree-png.webp);
     background-color: hsl(119, 100%, 90%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 .car {
-    background-image: url(/car.png);
+    background-image: url(car.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -285,7 +285,7 @@ background-repeat: no-repeat;
     background-color: hsl(119, 100%, 90%);
 }
 .baller {
-    background-image: url(/baller.png);
+    background-image: url(baller.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
