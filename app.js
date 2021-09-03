@@ -85,7 +85,7 @@ function init() {
     winSound.pause()
     gameOverTheme.pause()
     // start the obstacles moving
-    setSpeed(400)
+    setSpeed(350)
     activeCharacter = 1
   }
 
@@ -199,10 +199,10 @@ function init() {
     if (characterPositions[activeCharacter] <= width) {
       if (activeCharacter === 1) {
         activeCharacter = 2
-        setSpeed(330)
+        setSpeed(300)
       } else if (activeCharacter === 2) {
         activeCharacter = 3
-        setSpeed(290)
+        setSpeed(250)
       } else {
         win()
       }
