@@ -1,4 +1,4 @@
-# project-1
+# Get'a Wave
 
 ## Technologies used
 ### HTML 
