@@ -1,4 +1,4 @@
-# project-1
+# Get'a Wave
 
 ## Technologies used
 ### HTML 
@@ -44,7 +44,7 @@
 
 ## Installation instructions:
 - Click in the following link from your computer.
-
+- https://iuryliberato.github.io/project-1/
 
 ## Wins:
 - Flex-box feels easy now.

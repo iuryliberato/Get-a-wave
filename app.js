@@ -32,6 +32,7 @@ function init() {
   const popGameOver = document.querySelector('.gameOverOverlay')
   const popWin = document.querySelector('.winOverlay')
 
+
   const startingPosition1 = 86
   const startingPosition2 = 82
   const startingPosition3 = 78
@@ -81,6 +82,7 @@ function init() {
     characterPositions[3] = startingPosition3
     printCharacters()
     //start background sound
+    audio.volume = 0.2
     audio.play()
     winSound.pause()
     gameOverTheme.pause()
@@ -95,9 +97,9 @@ function init() {
   }
 
   function printCharacters() {
-  //empty all of the cells.
+    //empty all of the cells.
     cells.forEach(cell => cell.innerHTML = '')
-    
+
     cells[characterPositions[1]].innerHTML = activeCharacter === 1 ? '<img src="surfer.png" class="surfer active" >' : '<img src="surfer.png" class="surfer" >'
     cells[characterPositions[2]].innerHTML = activeCharacter === 2 ? '<img src="surfer2.png" class="surfer active" >' : '<img src="surfer2.png" class="surfer">'
     cells[characterPositions[3]].innerHTML = activeCharacter === 3 ? '<img src="surfer3.png" class="surfer active" >' : '<img src="surfer3.png" class="surfer" >'
@@ -159,6 +161,8 @@ function init() {
 
   }
 
+
+
   function keyUp(event) {
     let newPosition = characterPositions[activeCharacter]
     //let characters move around inside the grid.
@@ -173,7 +177,7 @@ function init() {
     } else if (event.code === 'ArrowRight' && (characterPositions[activeCharacter] + 1) % width !== 0) {
       newPosition++
     }
-    
+
     if (!cells[newPosition].classList.contains('no-Entry')) {
       characterPositions[activeCharacter] = newPosition
       movesound()
@@ -222,7 +226,13 @@ function init() {
 
   document.addEventListener('keyup', keyUp)
 
+
   startButtons.forEach(button => button.addEventListener('click', startReset))
 }
 
 window.addEventListener('DOMContentLoaded', init)
+
+
+
+
+
