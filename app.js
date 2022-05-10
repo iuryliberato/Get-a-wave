@@ -82,7 +82,7 @@ function init() {
     characterPositions[3] = startingPosition3
     printCharacters()
     //start background sound
-    audio.volume = 0.2
+    audio.volume = 0.1
     audio.play()
     winSound.pause()
     gameOverTheme.pause()
