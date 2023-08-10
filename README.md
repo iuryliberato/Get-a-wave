@@ -4,7 +4,7 @@ Get’a Wave is a game based on the game Frogger. You must travel from home to t
 
 ## Game’s Link
 
-[Get’a Wave](https://iuryliberato.github.io/project-1/)
+[Get’a Wave]([https://iuryliberato.github.io/project-1/](https://iuryliberato.github.io/Get-a-wave/))
 
 ## Overview and Concept
 
